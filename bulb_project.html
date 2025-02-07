@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bulb on off project</title>
+    <style>
+        .bulb-container{
+            margin: 25px;
+            padding: 25px;
+            border: 1px solid red;
+
+        }
+    </style>
+</head>
+<body>
+    <h1>Bulb control</h1>
+    <button onclick="turnOn()">turn on</button>
+    <button onclick="turnOff()">turn off</button>
+    <button id="onoffButton" onclick="toggleBulb()">ON</button>
+
+    <div class="bulb-container">
+        <img id="bulb" src="OFF.jpg" alt=""/>
+    </div>
+    <script>
+        //turn on
+        const turnOn=() => {
+            //bulb on
+            let imgob=document.getElementById("bulb");
+            imgob.setAttribute("src","ON.jpg");
+        };
+        const turnOff=() => {
+            //bulb on
+            let imgob=document.getElementById("bulb");
+            imgob.setAttribute("src","OFF.jpg");
+        };
+        //toggle
+        const toggleBulb=() => {
+            let imgob=document.getElementById("bulb");
+            let srcValue=imgob.getAttribute("src");
+
+            let buttonob=document.getElementById("onoffButton");
+            let buttonText=buttonob
+
+            if(srcValue=="OFF.jpg"){
+                turnOn();
+                
+
+            } else {
+                turnOff();
+            }
+        };
+
+    </script>
+    
+</body>
+</html>
